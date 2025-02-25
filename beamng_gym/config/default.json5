@@ -1,0 +1,60 @@
+{
+  // 走行するMAP
+  scenario: {
+    level: 'c1',
+    name: 'Reinforcement Learning'
+  },
+
+  // 使用する車両
+  ego_vehicle: {
+    name: 'ego_vehicle',
+    model: 'etk800',
+    color: 'Blue',
+    pos: [3794.3, 8799.8, 869.8],
+    rot_quat: [0.0, 0.0, 0.96126170, 0.27563736]
+  },
+
+  npc_vehicles: [
+    {
+
+    }
+  ],
+
+  // 使用するセンサー
+  lidars: [
+    {
+      name: 'center_lidar',
+      requested_update_time: 0.01,
+      pos: [0, 0.65, 2.0],
+      dir: [0, -1, 0],
+      up: [0, 0, 1],
+      vertical_resolution: 32,
+      horizontal_angle: 360,
+      is_rotate_mode: 'False',
+      is_360_mode: 'True',
+      is_using_shared_memory: 'True',
+      is_visualised: 'False',
+      is_streaming: 'True',
+      is_dir_world_space: 'False'
+    },
+  ],
+
+  cameras: [
+    {
+      name: 'center_camera',
+      requested_update_time: 0.01,
+      pos: [0, 0, 3],
+      dir: [0, -1, 0],
+      up: [0, 0, 1],
+      resolution: [640, 480],
+      near_far_planes: [0.05, 300],
+      is_using_shared_memory: 'True',
+      is_render_annotations: 'False',
+      is_render_instance: 'False',
+      is_render_depth: 'False',
+      is_visualised: 'False',
+      is_streaming: 'True',
+      is_dir_world_space: 'False'
+    }
+  ]
+}
