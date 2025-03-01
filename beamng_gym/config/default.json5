@@ -1,11 +1,11 @@
 {
-  // 走行するMAP
+  // the map
   scenario: {
     level: 'c1',
     name: 'Reinforcement Learning'
   },
 
-  // 使用する車両
+  // the player-controlled vehicle
   ego_vehicle: {
     name: 'ego_vehicle',
     model: 'etk800',
@@ -14,11 +14,12 @@
     rot_quat: [0.0, 0.0, 0.96126170, 0.27563736]
   },
 
+  // non-player vehicles
   npc_vehicles: [
 
   ],
 
-  // 使用するセンサー
+  // sensors
   lidars: [
     {
       name: 'center_lidar',

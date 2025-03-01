@@ -1,6 +1,8 @@
-# 仮想環境
-venv/
+# Virtual Environment  
+venv/  
 
-**__pycache__**
+# Bytecode Cache  
+__pycache__/  
 
-**egg-info**
+# Package Metadata  
+*.egg-info/  
