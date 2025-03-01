@@ -1,4 +1,4 @@
-# BeamNG Gym - Custom Reinforcement Learning Environment
+# BeamNG Gym
 
 ## Overview  
 
