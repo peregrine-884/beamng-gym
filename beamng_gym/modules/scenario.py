@@ -6,7 +6,7 @@ class Scenario:
     self.vehicles = []
     
   def __repr__(self):
-    return F"Scenario(Level: {self.level}, Name: {self.name})"
+    return F"Scenario(Level: {self.level}, Name: {self.name})\n"
   
 # 使用する車両
 class Vehicle:
@@ -18,7 +18,7 @@ class Vehicle:
     self.rot_quat = rot_quat
     
   def __repr__(self):
-    return F"Vehicle(Name: {self.name}, Model: {self.model}, Color: {self.color}, Pos: {self.pos}, Rot_Quat: {self.rot_quat})"
+    return F"Vehicle(Name: {self.name}, Model: {self.model}, Color: {self.color}, Pos: {self.pos}, Rot_Quat: {self.rot_quat})\n"
   
 # 使用するセンサー
 class Lidar:
@@ -40,10 +40,11 @@ class Lidar:
     self.is_dir_world_space = is_dir_world_space
 
   def __repr__(self):
-    return (f"Lidar(Name: {self.name}, Requested Update Time: {self.requested_update_time}, Pos: {self.pos}, Dir: {self.dir}, "
+    return (f"Name: {self.name}\n"
+            f"Requested Update Time: {self.requested_update_time}, Pos: {self.pos}, Dir: {self.dir}, "
             f"Up: {self.up}, Vertical Resolution: {self.vertical_resolution}, Horizontal Angle: {self.horizontal_angle}, "
             f"Is Rotate Mode: {self.is_rotate_mode}, Is 360 Mode: {self.is_360_mode}, Is Using Shared Memory: {self.is_using_shared_memory}, "
-            f"Is Visualised: {self.is_visualised}, Is Streaming: {self.is_streaming}, Is Dir World Space: {self.is_dir_world_space})")
+            f"Is Visualised: {self.is_visualised}, Is Streaming: {self.is_streaming}, Is Dir World Space: {self.is_dir_world_space})\n")
 
 
 class Camera:
@@ -66,8 +67,9 @@ class Camera:
     self.is_dir_world_space = is_dir_world_space
 
   def __repr__(self):
-    return (f"Camera(Name: {self.name}, Requested Update Time: {self.requested_update_time}, Pos: {self.pos}, Dir: {self.dir}, "
+    return (f"Name: {self.name}\n"
+            f"Requested Update Time: {self.requested_update_time}, Pos: {self.pos}, Dir: {self.dir}, "
             f"Up: {self.up}, Resolution: {self.resolution}, Near-Far Planes: {self.near_far_planes}, "
             f"Is Using Shared Memory: {self.is_using_shared_memory}, Is Render Annotations: {self.is_render_annotations}, "
             f"Is Render Instance: {self.is_render_instance}, Is Render Depth: {self.is_render_depth}, "
-            f"Is Visualised: {self.is_visualised}, Is Streaming: {self.is_streaming}, Is Dir World Space: {self.is_dir_world_space})")
+            f"Is Visualised: {self.is_visualised}, Is Streaming: {self.is_streaming}, Is Dir World Space: {self.is_dir_world_space})\n")

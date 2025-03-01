@@ -1,5 +1,5 @@
 import json5
-from modules.scenario import Scenario, Vehicle, Lidar, Camera
+from beamng_gym.modules.scenario import Scenario, Vehicle, Lidar, Camera
 
 def str_to_bool(value):
   """ 文字列の 'True' / 'False' を bool 型に変換 """
