@@ -103,10 +103,11 @@ def make_observation(vehicle_data, sensor_data):
                                    observation_space.spaces["vehicle"].high)
 
   # Process LiDAR and camera data based on the observation space
+
   for key in observation_space.spaces:
     if key.startswith("lidar_"):
       i = int(key.split("_")[1])
-      pointcloud = np.array(sensor_data["lidar"][i]['pointCloud'], dtype=np.float32)
+      pointcloud = np.array(sensor_data[0][f"lidar_{i}"]['pointCloud'], dtype=np.float32)
       
       max_points = observation_space.spaces[key].shape[0]  # Get max points from observation_space
       if pointcloud.shape[0] < max_points:
@@ -119,7 +120,7 @@ def make_observation(vehicle_data, sensor_data):
     
     elif key.startswith("camera_"):
       i = int(key.split("_")[1])
-      raw_data = sensor_data["camera"][i]['colour']
+      raw_data = sensor_data[1][f"camera_{i}"]['colour']
       image_data = np.frombuffer(raw_data, dtype=np.uint8)
       
       height, width = observation_space.spaces[key].shape[:2]  # Get resolution from observation_space

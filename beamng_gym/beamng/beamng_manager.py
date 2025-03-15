@@ -7,7 +7,7 @@ class BeamNGManager:
     self.ego_vehicle_data = ego_vehicle_data
     self.npc_data = npc_data
     
-    self.bng = BeamNGpy('localhost', 64256)
+    self.bng = BeamNGpy('localhost', 25252)
     self.bng.open(launch=False)
     
     self.scenario = Scenario(scenario_data.level, scenario_data.name)
