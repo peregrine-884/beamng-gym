@@ -41,7 +41,9 @@ def initialize_observation_space(sensor_manager):
   for i, cam in enumerate(sensor_manager.cameras):
     width, height = cam.resolution  # Stored as (width, height)
     space_dict[f"camera_{i}"] = Box(low=0, high=255, shape=(height, width, 4), dtype=np.uint8)
-
+  
+  # Add GNSS sensor to the observation space
+  space_dict["gps"] = Box(low=-np.inf, high=np.inf, shape=(4,), dtype=np.float32)
   # Store the observation space globally
   observation_space = Dict(space_dict)
   
@@ -101,6 +103,8 @@ def make_observation(vehicle_data, sensor_data):
   observation["vehicle"] = np.clip(observation["vehicle"], 
                                    observation_space.spaces["vehicle"].low, 
                                    observation_space.spaces["vehicle"].high)
+
+  observation["gps"] = np.array([vehicle_data["gps"]["x"],vehicle_data["gps"]["y"],vehicle_data["gps"]["lon"],vehicle_data["gps"]["lat"]], dtype=np.float32)
 
   # Process LiDAR and camera data based on the observation space
 
