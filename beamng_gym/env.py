@@ -53,9 +53,9 @@ class BeamNGEnv(gym.Env):
     return observation, info
     
   def step(self, action, **kwargs):
-    observation, reward, done, info = step_environment(self.beamng_manager, self.sensor_manager, action)
+    observation, reward, terminated, truncated, info = step_environment(self.beamng_manager, self.sensor_manager, action)
   
-    return observation, reward, done, info
+    return observation, reward, terminated, truncated, info
   
   def render():
     pass
