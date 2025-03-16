@@ -52,6 +52,8 @@ class SensorManager:
       print(f"Camera {c.name} resolution: {c.resolution}")
       
   def get_sensor_data(self):
+    lidar_data = {}
+    camera_data = {}
     if len(self.lidars) != 0:
       lidar_data = {f"lidar_{i}": lidar.poll() for i, lidar in enumerate(self.lidars)}
     if len(self.cameras) != 0:
