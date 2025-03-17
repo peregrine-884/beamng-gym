@@ -25,6 +25,8 @@ class SensorManager:
         is_dir_world_space=l.is_dir_world_space
       )
       self.lidars.append(lidar)
+
+      print(f"Lidar {l.name} vertical resolution: {l.vertical_resolution}")
       
     for c in camera_data:
       camera = Camera(
@@ -46,8 +48,14 @@ class SensorManager:
         is_dir_world_space=c.is_dir_world_space
       )
       self.cameras.append(camera)
+
+      print(f"Camera {c.name} resolution: {c.resolution}")
       
   def get_sensor_data(self):
-    lidar_data = {f"lidar_{i}": lidar.poll() for i, lidar in enumerate(self.lidars)}
-    camera_data = {f"camera_{i}": camera.stream_raw() for i, camera in enumerate(self.cameras)}
+    lidar_data = {}
+    camera_data = {}
+    if len(self.lidars) != 0:
+      lidar_data = {f"lidar_{i}": lidar.poll() for i, lidar in enumerate(self.lidars)}
+    if len(self.cameras) != 0:
+      camera_data = {f"camera_{i}": camera.stream_raw() for i, camera in enumerate(self.cameras)}
     return lidar_data, camera_data

@@ -18,7 +18,8 @@ def step_environment(beamng_manager, sensor_manager, action):
       tuple: A tuple containing:
           - observation (dict): The updated observation after applying the action.
           - reward (float): The reward for the step (to be implemented).
-          - done (bool): Whether the episode has ended (to be implemented).
+          - terminated (bool): A flag indicating if the episode has terminated.
+          - truncated (bool): A flag indicating if the episode was truncated.
           - info (dict): Additional debugging information.
   """
 
@@ -26,7 +27,7 @@ def step_environment(beamng_manager, sensor_manager, action):
   apply_action(beamng_manager.ego_vehicle, action)
   
   # Step the simulation by 30 steps (equivalent to 0.5 second)
-  beamng_manager.step_simulation(30)
+  beamng_manager.step_simulation(6)
   
   # Retrieve updated vehicle state and electrics data
   vehicle_data = beamng_manager.get_vehicle_data()
@@ -41,9 +42,12 @@ def step_environment(beamng_manager, sensor_manager, action):
   reward = 0.0  
   
   # Termination condition (to be implemented)
-  done = False  
+  terminated = beamng_manager.validate_collision(damage_threshold=0.01)
+  
+  # Truncation condition (to be implemented)
+  truncated = False
   
   # Additional information (useful for debugging or extra details)
   info = {}
   
-  return observation, reward, done, info
+  return observation, reward, terminated, truncated, info

@@ -1,0 +1,145 @@
+{
+  // the map
+  scenario: {
+    level: 'c1',
+    name: 'Reinforcement Learning'
+  },
+
+  // the player-controlled vehicle
+  ego_vehicle: {
+    name: 'ego_vehicle',
+    model: 'etk800',
+    color: 'Blue',
+    pos: [3794.3, 8799.8, 869.8],
+    rot_quat: [0.0, 0.0, 0.96126170, 0.27563736]
+  },
+
+  // non-player vehicles
+  npc_vehicles: [
+
+  ],
+
+  // sensors
+  lidars: [
+    {
+      name: 'center_lidar',
+      requested_update_time: 0.01,
+      pos: [0, 0.65, 2.0],
+      dir: [0, -1, 0],
+      up: [0, 0, 1],
+      vertical_resolution: 32,
+      horizontal_angle: 360,
+      is_rotate_mode: 'False',
+      is_360_mode: 'True',
+      is_using_shared_memory: 'True',
+      is_visualised: 'False',
+      is_streaming: 'True',
+      is_dir_world_space: 'False'
+    },
+  ],
+
+  cameras: [
+    {
+      name: 'front_camera',
+      requested_update_time: 0.01,
+      pos: [0, -1, 1.8],
+      dir: [0, -1, 0],
+      up: [0, 0, 1],
+      resolution: [1600, 900],
+      near_far_planes: [0.05, 300],
+      is_using_shared_memory: 'True',
+      is_render_annotations: 'False',
+      is_render_instance: 'False',
+      is_render_depth: 'False',
+      is_visualised: 'False',
+      is_streaming: 'True',
+      is_dir_world_space: 'False',
+      field_of_view_y: 70
+    },
+    {
+      name: 'back_camera',
+      requested_update_time: 0.01,
+      pos: [0, 2.0, 1.8],
+      dir: [0, 1, 0],
+      up: [0, 0, 1],
+      resolution: [1600, 900],
+      near_far_planes: [0.05, 300],
+      is_using_shared_memory: 'True',
+      is_render_annotations: 'False',
+      is_render_instance: 'False',
+      is_render_depth: 'False',
+      is_visualised: 'False',
+      is_streaming: 'True',
+      is_dir_world_space: 'False',
+      field_of_view_y: 130
+    },
+    {
+      name: 'front_left_camera',
+      requested_update_time: 0.01,
+      pos: [1.5, -1, 1.8],
+      dir: [0.81915, -0.5735, 0],
+      up: [0, 0, 1],
+      resolution: [1600, 900],
+      near_far_planes: [0.05, 300],
+      is_using_shared_memory: 'True',
+      is_render_annotations: 'False',
+      is_render_instance: 'False',
+      is_render_depth: 'False',
+      is_visualised: 'False',
+      is_streaming: 'True',
+      is_dir_world_space: 'False',
+      field_of_view_y: 70
+    },
+    {
+      name: 'front_right_camera',
+      requested_update_time: 0.01,
+      pos: [-1.5, -1, 1.8],
+      dir: [-0.81915, -0.5735, 0],
+      up: [0, 0, 1],
+      resolution: [1600, 900],
+      near_far_planes: [0.05, 300],
+      is_using_shared_memory: 'True',
+      is_render_annotations: 'False',
+      is_render_instance: 'False',
+      is_render_depth: 'False',
+      is_visualised: 'False',
+      is_streaming: 'True',
+      is_dir_world_space: 'False',
+      field_of_view_y: 70
+    },
+    {
+      name: 'back_left_camera',
+      requested_update_time: 0.01,
+      pos: [1.5, 2.0, 1.8],
+      dir: [0.93969, 0.342020, 0],
+      up: [0, 0, 1],
+      resolution: [1600, 900],
+      near_far_planes: [0.05, 300],
+      is_using_shared_memory: 'True',
+      is_render_annotations: 'False',
+      is_render_instance: 'False',
+      is_render_depth: 'False',
+      is_visualised: 'False',
+      is_streaming: 'True',
+      is_dir_world_space: 'False',
+      field_of_view_y: 70
+    },
+    {
+      name: 'back_right_camera',
+      requested_update_time: 0.01,
+      pos: [-1.5, 2.0, 1.8],
+      dir: [-0.93969, 0.342020, 0],
+      up: [0, 0, 1],
+      resolution: [1600, 900],
+      near_far_planes: [0.05, 300],
+      is_using_shared_memory: 'True',
+      is_render_annotations: 'False',
+      is_render_instance: 'False',
+      is_render_depth: 'False',
+      is_visualised: 'False',
+      is_streaming: 'True',
+      is_dir_world_space: 'False',
+      field_of_view_y: 70
+    },
+  ]
+}
